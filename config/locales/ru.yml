@@ -1,6 +1,7 @@
 # Russian strings go here for Rails i18n
 ru:
   label_agile: Agile
+  label_backlog: Backlog
   label_agile_board: Доска задач
   label_agile_board_plural: Доски задач
   label_agile_board_thumbnails: Превью

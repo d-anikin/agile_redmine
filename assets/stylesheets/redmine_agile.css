@@ -4,6 +4,33 @@
 #admin-menu a.agile { background-image: url(../images/agile.png);}
 .icon-fullscreen { background-image:  url(../images/fullscreen.png); }
 
+#top-menu a.agile-boards {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  background-image: url(../images/agile.png);
+}
+
+#top-menu a.all-issues {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  background-image: url(../../../images/table_multiple.png);
+}
+
+#top-menu a.issues-backlog {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  background-image: url(../../../images/document.png);
+}
+
 /**********************************************************************/
 /* FULLSCREEN
 /**********************************************************************/

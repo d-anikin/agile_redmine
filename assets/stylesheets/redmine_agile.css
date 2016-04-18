@@ -31,6 +31,28 @@
   background-image: url(../../../images/document.png);
 }
 
+.priority-icon {
+  float: right;
+  width: 16px;
+  height: 16px;
+}
+
+.priority-immediate {
+  background-image: url(../images/immediate.png);
+}
+.priority-urgent {
+  background-image: url(../images/urgent.png);
+}
+.priority-high {
+  background-image: url(../images/high.png);
+}
+.priority-normal {
+  background-image: url(../images/normal.png);
+}
+.priority-low {
+  background-image: url(../images/low.png);
+}
+
 /**********************************************************************/
 /* FULLSCREEN
 /**********************************************************************/

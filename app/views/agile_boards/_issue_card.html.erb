@@ -13,13 +13,14 @@
       <span class="fields">
           <% if User.current.allowed_to?(:edit_issues, @project, :global => true) && RedmineAgile.allow_inline_comments?  %>
             <div class="quick-edit-card">
-              <%# link_to image_tag("/images/edit.png"), edit_issue_path(issue), :class => "", :style => "margin-right: 3px;", :title => l(:button_edit) %>
+              <%= link_to image_tag("/images/edit.png"), edit_issue_path(issue), :class => "", :style => "margin-right: 3px;", :title => l(:button_edit) %>
               <%= link_to image_tag("/images/comment.png", :alt => "Edit"), "#", :onclick => "showInlineComment(this, '#{j(agile_inline_comment_path(:id => issue))}'); return false;", :title => l(:label_comment_add), :class => 'add-comment' %>
             </div>
           <% end %>
           <% if @query.has_column_name?(:project) %>
             <p class="project">
               <%= issue.project.name %>
+              <span class="priority-icon priority-<%= issue.priority.name.downcase %>"></span>
             </p>
           <% end %>
           <p class="issue-id <%= 'without-tracker' if @query.has_column_name?(:tracker).blank? %>">

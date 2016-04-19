@@ -31,6 +31,14 @@
   background-image: url(../../../images/document.png);
 }
 
+.issue-card.context-menu-selection {
+  background-color: #FFB779 !important;
+}
+
+.issue-card.context-menu-selection:hover {
+  background-color: #FFB779 !important;
+}
+
 .priority-icon {
   float: right;
   width: 16px;

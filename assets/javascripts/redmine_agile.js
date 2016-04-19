@@ -129,7 +129,7 @@
         changeHtmlNumber(elem, value);
       });
     };
-    
+
     this.successSortable = function(oldStatusId, newStatusId, oldSwimLaneId, newSwimLaneId) {
       clearErrorMessage();
     };
@@ -483,6 +483,21 @@
 
     });
   };
+
+  function contextRightClick(event){
+    var target = $(event.target);
+    var elem = target.parents('.issue-card').first();
+    if (!elem.hasClass('hascontextmenu')) {return;}
+    event.preventDefault();
+    if (!contextMenuIsSelected(elem)) {
+      contextMenuUnselectAll();
+      contextMenuAddSelection(elem);
+      contextMenuSetLastSelected(elem);
+    }
+    contextMenuShow(event);
+  }
+
+  $(document).contextmenu(contextRightClick);
 })();
 
 function parseErrorResponse(responseText){
@@ -626,6 +641,7 @@ function cancelInlineComment(node){
   $(node).parent().siblings('.quick-edit-card').toggleClass('hidden');
   return false;
 }
+
 
 $(document).ready(function(){
   $('table.issues-board').StickyHeader();

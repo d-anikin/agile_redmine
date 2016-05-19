@@ -45,9 +45,9 @@ Redmine::Plugin.register :redmine_agile do
   menu :admin_menu, :agile, {:controller => 'settings', :action => 'plugin', :id => "redmine_agile"}, :caption => :label_agile
 
   menu :top_menu, :all_issues, { :controller => 'issues', :action => 'index', :set_filter => 1}, :caption => :label_issue_view_all
-  menu :top_menu, :issues_backlog, { :controller => 'issues', :action => 'index', :set_filter => 1, :f => ['status_id', 'fixed_version_id', 'version_status'], :op => { :status_id => 'o', :fixed_version_id => '!*', :version_status => 'open' }, :group_by => 'project', :per_page => 100}, :caption => :label_backlog
-  menu :top_menu, :agile_boards, { :controller => 'agile_boards', :action => 'index', :set_filter => 1, :f => ['status_id', 'fixed_version_id', 'version_status'], :op => { :status_id => 'o', :fixed_version_id => '*', :version_status => 'open' } }, :caption => :label_agile
-  menu :top_menu, :issues_gantt, { :controller => 'gantts', :action => 'show', :set_filter => 1, :f => ['status_id', 'fixed_version_id', 'version_status'], :op => { :status_id => 'o', :fixed_version_id => '*', :version_status => 'open' } }, :caption => :label_gantt
+  menu :top_menu, :issues_backlog, { :controller => 'issues', :action => 'index', :set_filter => 1, :f => ['status_id', 'fixed_version_id'], :op => { :status_id => 'o', :fixed_version_id => '!*' }, :group_by => 'project', :per_page => 100}, :caption => :label_backlog
+  menu :top_menu, :agile_boards, { :controller => 'agile_boards', :action => 'index', :set_filter => 1, :f => ['status_id', 'fixed_version_id', 'version_status'], :op => { :status_id => 'o', :fixed_version_id => '*', :version_status => '' } :v => { version_status: ['open'] }}, :caption => :label_agile
+  menu :top_menu, :issues_gantt, { :controller => 'gantts', :action => 'show', :set_filter => 1, :f => ['status_id', 'fixed_version_id', 'version_status'], :op => { :status_id => 'o', :fixed_version_id => '*', :version_status => '' } :v => { version_status: ['open'] }}, :caption => :label_gantt
 
   project_module :agile do
     permission :manage_public_agile_queries, {:agile_queries => [:new, :create, :edit, :update, :destroy]}, :require => :member
